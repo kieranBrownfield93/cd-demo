@@ -17,3 +17,6 @@ before_script:
   - bower install
 script:
   - xvfb-run npm test
+after_success:
+  - polymer build
+  - firebase deploy --token ${FIREBASE_TOKEN}
